@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<constant name="struts.devMode" value="true"/>
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<!-- 设置最大上传文件的大小 2M-->
+	<constant name="struts.multipart.maxSize" value="5242880" />
+	<!-- 配置临时存储地址 -->
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<!-- 将websocket请求过滤 -->
+	<constant name="struts.action.excludePattern" value="/chat/server"></constant>
+	
+	<package name="main" extends="struts-default" namespace="/">
+	
+		<default-action-ref name="index" />
+    	<action name="index">
+    		<result>/index.jsp</result>
+    	</action>
+	</package>
+    <package name="default" extends="struts-default" namespace="/">
+    	<!-- 登陆action --> 
+    	<action name="login" class="loginAction" />
+    	<!-- 完善用户资料的action -->
+    	<action name="completeInfo" class="completeUserInfo" />
+    	<!-- 获取商品信息action -->
+    	<action name="getCommodityInfo" class="getCommodityInfo" />
+    	<!-- 发布商品 -->
+    	<action name="publishCommodity" class="publishCommodity" />
+    	<!-- 进行商品的搜索 -->
+    	<action name="searchCommodity" class="searchCommodity" />
+    	<!-- 购买商品，提交订单处理 -->
+    	<action name="buyCommodity" class="buyCommodity" />
+    	<!-- 获取批量商品，并进行分页操作 -->
+    	<action name="getCommoditysByCategory" class="getCommoditysByCategory" />
+    	<!-- 获取用户所有订单 -->
+    	<action name="getOrdersByUserId" class="getOrdersByUserId" />
+    	<!-- 获取单个订单信息 -->
+    	<action name="getOrderInfo" class="getOrderInfo" />
+    	<!-- 删除订单 -->
+    	<action name="deleteOrder" class="deleteOrder" />
+    	<!-- 将商品加入购物车 -->
+    	<action name="addToShopCar" class="addToShopCar" />
+    	<!-- 获取购物车信息 -->
+    	<action name="getShopCarInfo" class="getShopCarInfo" />
+    	<!-- 给卖家商品进行留言 -->
+    	<action name="replyMessage" class="replyMessage" />
+    	<!-- 获取该商品的所有留言 -->
+    	<action name="getReplys" class="getReplys" />
+    	
+    	<action name="getUserInfo" class="getUserInfo" />
+    	
+    	<action name="updateCommodity" class="updateCommodity" />
+    	<!-- 删除商品 -->
+    	<action name="deleteOrder" class="deleteOrder" />
+    	
+    	<!-- 更新订单 -->
+    	<action name="updateOrder" class="updateOrder" />
+    </package>
+</struts>
