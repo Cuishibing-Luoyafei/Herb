@@ -106,6 +106,7 @@ public class LoginAction extends ActionSupport {
 				if(ud.saveUser(userSave)) {
 					success = true;
 					jo.addProperty("userId", userSave.getUserId());
+					jo.addProperty("isAdmin", false);
 //					ServletActionContext.getRequest().getSession().setAttribute("user", userSave);
 				} else
 					reason = "注册失败！";

@@ -78,7 +78,7 @@ public class GetOrdersByUserIdAction extends ActionSupport {
 		} catch(IOException e) {}
 		User user = ud.getUserInId(userId);
 		if(user != null) {
-			List<Order> os = od.getOrdersInUserId(user.getUserId(), OrderStatus.NONE_STATUS, UserType.SELLER_TYPE);
+			List<Order> os = od.getOrdersInUserId(user.getUserId(), OrderStatus.NONE_STATUS, UserType.CREATOR_TYPE);
 			if(os != null) {
 				success = true;
 				User[] users = new User[os.size()];

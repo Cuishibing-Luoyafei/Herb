@@ -21,8 +21,8 @@ import com.opensymphony.xwork2.ActionSupport;
 @Component("getCommoditysByCategory")
 @Scope("prototype")
 public class GetCommoditysByCategoryAction extends ActionSupport {
-
-	private String category = "0";//物品类别(0:出售的商品，1:预购的商品，2:二手物品交换)
+	
+	private String category = "0";//物品类别(0:中餐，1:西餐，2:快餐)
 	private int start = 0;//获取的起始点
 	private int length = 12;//获取的数量
 	
